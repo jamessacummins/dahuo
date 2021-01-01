@@ -45,6 +45,10 @@ body{
     */
 }
 
+::placeholder{
+	font-size:.6rem;
+}
+
 
 .result-container{
 	margin-top:100px;
