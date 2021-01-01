@@ -55898,6 +55898,8 @@ function updateSearchBox(){
         resultChar[i].innerHTML = targetChar.char;
         resultFreq[i].innerHTML = targetChar.freq;
         resultPinyin[i].innerHTML = targetChar.pinyin;
+        if(targetChar.def === undefined)
+            targetChar.def = 'This character does not have a definition in the database.';
         resultDef[i].innerHTML = targetChar.def;
     };
 }
