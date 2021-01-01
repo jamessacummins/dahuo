@@ -89,7 +89,9 @@ body{
 	font-size:1rem;
 }
 .result-def{
+	max-width:80%;
 	margin:0 20px;
 	margin-top:10px;
 	font-size:.7rem;
+
 }
