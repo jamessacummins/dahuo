@@ -55877,30 +55877,71 @@ function updateSearchBox(){
     resultDef[0].innerHTML = targetChar.def;
 }
 */
+function returnTextNode(text){
+    let returnable = document.createTextNode(text);
+    return returnable;
+};
+
+function createPWithClassText(className,text){
+    let returnable = document.createElement('p');
+    returnable.classList.add(className);
+    returnable.appendChild(returnTextNode(text));
+    return returnable;
+};
+
+function createResultDiv(char, freq, pinyin, def) {
+    let returnable = document.createElement('div');
+    returnable.classList.add('result');
+    let charChild = createPWithClassText('result-character', char);
+    let freqChild = createPWithClassText('result-freq', freq);
+    let pinyinChild = createPWithClassText('result-pinyin', pinyin);
+    let defChild = createPWithClassText('result-def', def);
+    returnable.appendChild(charChild);
+    returnable.appendChild(freqChild);
+    returnable.appendChild(pinyinChild);
+    returnable.appendChild(defChild);
+    return returnable;
+};
+
+
 function findChar(kan) {
     return data.find(({char}) => char === kan)
 };
 
 let searchBox = document.getElementsByClassName('search-box')[0].value;
-let resultChar = document.getElementsByClassName('result-character');
-let resultFreq = document.getElementsByClassName('result-freq');
-let resultPinyin = document.getElementsByClassName('result-pinyin');
-let resultDef = document.getElementsByClassName('result-def');
+let resultContainer = document.getElementsByClassName('result-container')[0];
 
-function updateSearchBox(){
+function wipeResultBoxes(){
+    let children = resultContainer.children;
+    if(children.length !== 0){
+        while(resultContainer.hasChildNodes()) {
+            resultContainer.removeChild(resultContainer.firstChild);
+        };
+    };
+};
+
+function updateResultBoxes(){
+    for(let i = 0; i < searchBox.length; i++){
+        let targetChar = findChar(searchBox[i])
+        console.log(targetChar);
+        let resultDiv = createResultDiv(
+            targetChar.char,
+            targetChar.freq,
+            targetChar.pinyin,
+            targetChar.def
+
+        )
+        resultContainer.appendChild(resultDiv);
+    }
+}
+
+function updateSearch(){
     if(searchBox === null){
         return;
     }
     searchBox = document.getElementsByClassName('search-box')[0].value;
-    for(let i = 0; i < searchBox.length; i++){
-        let targetChar = findChar(searchBox[i]);
-        console.log(targetChar);
-        resultChar[i].innerHTML = targetChar.char;
-        resultFreq[i].innerHTML = targetChar.freq;
-        resultPinyin[i].innerHTML = targetChar.pinyin;
-        if(targetChar.def === undefined)
-            targetChar.def = 'This character does not have a definition in the database.';
-        resultDef[i].innerHTML = targetChar.def;
-    };
+    updateResultBoxes();
+    
 }
+
 
