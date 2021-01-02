@@ -55936,7 +55936,7 @@ function updateResultBoxes(){
 }
 
 function updateSearch(){
-  
+    console.log('ran');
     searchBox = document.getElementsByClassName('search-box')[0].value;
     wipeResultBoxes();
     updateResultBoxes();

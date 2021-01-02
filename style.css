@@ -11,18 +11,26 @@ body{
 	
 }
 .logo-container{
-	height:200px;
+	height:150px;
 	display:flex;
+	flex-direction:column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	text-align:center;
+	padding: 0 1rem;
+	color:white;
+	font-size:.8rem;
 }
 .zh-chinese{
 	font-family: 'Noto Sans SC', sans-serif;
 }
+.logo{
+	margin-top:10px;
+}
 .search-band{
-	margin-top:50px;
+	margin-top:20px;
 	background-color:#FF7F51;
-	height:300px;
+	height:200px;
 	width:100%;
 	display:flex;
 	align-items:center;
@@ -30,13 +38,22 @@ body{
 	box-shadow:  13px 13px 26px #9d3242,
              -13px -13px 26px #ff526c;
 }
+@media (min-width:750px) {
+	.search-band{
+		margin-top:50px;
+	}
+	.logo-container{
+		font-size:1.2rem;
+	}
+
+}
 .search-box{
 	border:thick;
 	border-radius:1px;
 	border-color:#444444;
 	min-height:50%;
-	width:300px;
-	min-width:30%;
+	width:50%;
+	min-width:300px;
 	text-align:center;
 	font-size:3rem;
 	color:#111;
