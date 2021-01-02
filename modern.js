@@ -55923,7 +55923,7 @@ function wipeResultBoxes(){
 function updateResultBoxes(){
     for(let i = 0; i < searchBox.length; i++){
         let targetChar = findChar(searchBox[i])
-        console.log(targetChar);
+        
         let resultDiv = createResultDiv(
             targetChar.char,
             targetChar.freq,
@@ -55936,10 +55936,9 @@ function updateResultBoxes(){
 }
 
 function updateSearch(){
-    if(searchBox === null){
-        return;
-    }
+  
     searchBox = document.getElementsByClassName('search-box')[0].value;
+    wipeResultBoxes();
     updateResultBoxes();
     
 }
