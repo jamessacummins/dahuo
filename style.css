@@ -97,6 +97,7 @@ body{
 .result-character{
 	margin: 0 auto;
 	margin-top:10px;
+	font-weight:300;
 	font-size:2.5rem;
 }
 .result-freq{

@@ -18,6 +18,7 @@ function createResultDiv(char, freq, pinyin, def) {
     let returnable = document.createElement('div');
     returnable.classList.add('result');
     let charChild = createPWithClassText('result-character', char);
+    charChild.classList.add('zh-chinese');
     let freqChild = createPWithClassText('result-freq', freq);
     let pinyinChild = createPWithClassText('result-pinyin', pinyin);
     let defChild = createPWithClassText('result-def', def);

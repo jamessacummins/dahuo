@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
@@ -19,7 +21,7 @@
 	<div class='text-select-container'>
 		
 		<div class='option-container'>
-			<p class='option-header'>Search Modern Texts</p>
+			<p class='option-header'>Search All Modern Texts</p>
 			<label class="switch">
 				<input class='corpus-toggle' type="checkbox" checked disabled='true' onchange='updateCorpus(0)'>
 				<span class="slider round"></span>
@@ -43,7 +45,7 @@
 
 
 	<div class='search-band'>
-		<input type='search' class='search-box zh-chinese' onchange='updateSearch()' placeholder='Enter characters here, then hit enter.'>
+		<input type='search' class='search-box zh-chinese' oninput='updateSearch()' placeholder='Input your characters here.'>
 	</div>
 	<div class='result-container'>
 		<!--
