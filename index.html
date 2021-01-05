@@ -15,67 +15,47 @@
 		<img class='logo' src='dahuo.png' height=70px>
 		<p class='explainer-text'>Use this tool to get the frequencies of standard characters!</p>
 	</div>
+
+	<div class='text-select-container'>
+		
+		<div class='option-container'>
+			<p class='option-header'>Search Modern Texts</p>
+			<label class="switch">
+				<input class='corpus-toggle' type="checkbox" checked disabled='true' onchange='updateCorpus(0)'>
+				<span class="slider round"></span>
+			</label>
+		</div>
+		<div class='option-container'>
+			<p class='option-header'>Search Imaginative Texts</p>
+			<label class="switch">
+				<input class='corpus-toggle' type="checkbox" onchange='updateCorpus(1)'>
+				<span class="slider round"></span>
+			</label>
+		</div>
+		<div class='option-container'>
+			<p class='option-header'>Search Informative Texts</p>
+			<label class="switch">
+				<input class='corpus-toggle' type="checkbox"  onchange='updateCorpus(2)'>
+				<span class="slider round"></span>
+			</label>
+		</div>
+	</div>
+
+
 	<div class='search-band'>
 		<input type='search' class='search-box zh-chinese' onchange='updateSearch()' placeholder='Enter characters here, then hit enter.'>
 	</div>
 	<div class='result-container'>
-	<!--
-		<div class='result'>
-			<h2 class='result-character zh-chinese'>
-				
-			</h2>
-			<h2 class='result-freq'>
-				
-			</h2>
-			<p class='result-pinyin'>
-				
-			</p>
-			<p class='result-def'>
-				
-			</p>
+		<!--
+		<div class='thanks'>
+		Thanks to Jun Da for the data found <a target=”_blank” href='https://lingua.mtsu.edu/chinese-computing/statistics/index.html'>here</a>.
 		</div>
-		<div class='result'>
-			<h2 class='result-character zh-chinese'>
-				
-			</h2>
-			<h2 class='result-freq'>
-				
-			</h2>
-			<p class='result-pinyin'>
-				
-			</p>
-			<p class='result-def'>
-			</p>
-		</div>
-		<div class='result'>
-			<h2 class='result-character zh-chinese'>
-				
-			</h2>
-			<h2 class='result-freq'>
-				
-			</h2>
-			<p class='result-pinyin'>
-			</p>
-			<p class='result-def'>
-			
-			</p>
-		</div>
-		<div class='result'>
-			<h2 class='result-character zh-chinese'>
-				
-			</h2>
-			<h2 class='result-freq'>
-		
-			</h2>
-			<p class='result-pinyin'>
-				
-			</p>
-			<p class='result-def'>
-				
-			</p>
-		</div>
-	-->
+		-->
 	</div>
 	<script src='modern.js'></script>
+	<script src='logic.js'></script>
+	<script src='imaginative.js'></script>
+	<script src='informative.js'></script>
+	
 <body>
 </html>
