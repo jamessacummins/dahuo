@@ -48,20 +48,21 @@ function wipeResultBoxes(){
 function updateResultBoxes(){
     for(let i = 0; i < searchBox.length; i++){
         let targetChar = findChar(searchBox[i])
-        
-        let resultDiv = createResultDiv(
-            targetChar.char,
-            targetChar.freq,
-            targetChar.pinyin,
-            targetChar.def
+        if(targetChar !== undefined){
+            let resultDiv = createResultDiv(
+                targetChar.char,
+                targetChar.freq,
+                targetChar.pinyin,
+                targetChar.def
 
-        )
-        resultContainer.appendChild(resultDiv);
+            )
+            resultContainer.appendChild(resultDiv);
+        }
     }
 }
 
 function updateSearch(){
-    console.log('ran');
+    
     searchBox = document.getElementsByClassName('search-box')[0].value;
     wipeResultBoxes();
     updateResultBoxes();
