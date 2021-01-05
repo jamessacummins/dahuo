@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta name="viewport" content="width=device-width">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+	</style>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap');
+	</style>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+	<div class='logo-container'>
+		<img class='logo' src='dahuo.png' height=70px>
+		<p class='explainer-text'>在下方输入汉字即可查看汉字频率卡</p>
+	</div>
+
+	<div class='text-select-container'>
+		
+		<div class='option-container'>
+			<p class='option-header'>现代汉语单字字频</p>
+			<label class="switch">
+				<input class='corpus-toggle' type="checkbox" checked disabled='true' onchange='updateCorpus(0)'>
+				<span class="slider round"></span>
+			</label>
+		</div>
+		<div class='option-container'>
+			<p class='option-header'>现代文学类文本中字频</p>
+			<label class="switch">
+				<input class='corpus-toggle' type="checkbox" onchange='updateCorpus(1)'>
+				<span class="slider round"></span>
+			</label>
+		</div>
+		<div class='option-container'>
+			<p class='option-header'>现代汉语信息类文本中字频</p>
+			<label class="switch">
+				<input class='corpus-toggle' type="checkbox"  onchange='updateCorpus(2)'>
+				<span class="slider round"></span>
+			</label>
+		</div>
+	</div>
+
+
+	<div class='search-band'>
+		<input type='search' class='search-box zh-chinese' oninput='updateSearch()' placeholder='输入汉字'>
+	</div>
+	<div class='result-container'>
+		<!--
+		<div class='thanks'>
+		Thanks to Jun Da for the data found <a target=”_blank” href='https://lingua.mtsu.edu/chinese-computing/statistics/index.html'>here</a>.
+		</div>
+		-->
+	</div>
+	<script src='modern.js'></script>
+	<script src='logic.js'></script>
+	<script src='imaginative.js'></script>
+	<script src='informative.js'></script>
+	
+<body>
+</html>
