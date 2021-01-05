@@ -11,6 +11,11 @@ body{
 	min-width:300px;
 	
 }
+.language{
+	position:absolute;
+	margin-top:5px;
+	margin-left:5px;
+}
 .logo-container{
 	height:150px;
 	display:flex;
